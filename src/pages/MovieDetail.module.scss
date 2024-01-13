@@ -1,0 +1,80 @@
+.movieDetail {
+    font-family: 'Exo 2', sans-serif;
+    padding: 0 23rem;
+    font-size: 1.3rem;
+    padding-bottom: 6rem;
+
+    .principal {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+    }
+
+    img {
+        margin-top: 1rem;
+        border-radius: 8px;
+        width: 50rem;
+
+    }
+
+    div{
+        padding: 1rem 0;
+        font-family: Roboto, sans-serif;
+    }
+
+    span {
+        font-family: 'Exo 2', sans-serif;
+        font-weight: 600;
+        margin-right: 1rem;
+    }
+    
+}
+
+.buttonGoBack {
+    background-color: var(--white);
+    border: none;
+    outline: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    width: 20vw;
+    transition: outline 0.3s ease;
+    transition: 0.4s ease;
+    font-family: 'Exo 2', sans-serif;
+
+    font-size: 1.3rem;
+    color: var(--gray-900);
+    font-weight: 700;
+    margin: 0;
+
+    &:hover {
+        background-color: var(--gray-900);
+        box-shadow: 0 8px 12px #000000;
+        outline: 1px solid var(--white);
+        color: var(--white);
+
+        cursor: pointer;           
+    }  
+}
+
+.buttonDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+    .movieDetail {
+        padding: 0 1rem;
+
+        .principal{
+            img {
+                width: 20rem;
+            }
+        }
+    }
+
+    .buttonGoBack {
+        width: 30vw;
+    }
+}

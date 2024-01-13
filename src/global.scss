@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2&family=Roboto&display=swap');
+
+
+:root {
+  --white: #fff;
+
+  --black: #000;
+
+  --green-500: #63ff6331;
+
+  --gray-600: #252222;
+  --gray-900: #121214;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  max-width: 120rem;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  background-color: var(--gray-900);
+  color: var(--white);
+
+  a{
+    text-decoration: none;
+    color: var(--white);
+  }
+
+  h1,
+  h2,
+  h3,
+  h1,
+  h5,
+  li {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 3rem;
+  }
+
+  p {
+    font-family: 'Roboto', sans-serif;
+  }
+}

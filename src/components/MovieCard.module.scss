@@ -1,0 +1,113 @@
+.movieCard {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 12px #000000;
+    transition: transform 0.4s ease;
+    border-radius: 8px;
+    
+
+    width: 11.7rem;
+
+    &:hover {
+        transform: translateY(-5px) scale(1.1);
+        border-bottom-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+        box-shadow: 0 8px 12px #000000;
+
+        .movieTitle {
+            transform: scale(1.02);
+            transition: 0.4s ease;
+        }
+
+        img {
+            transform: scale(1.02);
+            transition: 0.4s ease;
+        }
+    }
+}
+
+.movieImage {
+    img{
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+        width: 11.7rem;
+        height: 16rem;
+    }
+    @media screen and (max-width: 768px) {
+        img {
+            width: 2rem;
+            /* Altere a largura da imagem para ocupar toda a largura da tela em telas menores */
+            height: auto;
+            /* Manter a proporção da altura */
+        }
+    }
+
+}
+
+.movieTitle {
+    background-color: var(--gray-600);
+    padding-bottom: 1rem;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+
+    h5 {
+        font-family: roboto;
+        font-size: 1rem;
+        font-weight: 500;
+        margin-top: 0.8rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.buttonDetail {
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-weight: 600;
+    background-color: var(--gray-900);
+    color: var(--white);
+    padding: 0.5rem;
+    font-family: 'Exo 2', sans-serif;
+    transition: 0.4s ease;
+
+    &:hover {
+        background-color: var(--white);
+        color: var(--gray-600);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .movieTitle {
+        width: 8rem;
+        height: auto;
+
+        h5 {
+            text-align: center;
+            margin: 0.2rem ;
+            max-width: 8rem;
+            font-size: 0.75rem;
+            margin-bottom: 1rem;
+        }
+    }
+
+    .movieCard {
+        width: 8rem;
+        height: auto;
+        margin: 2rem 0;
+    }
+
+    .movieImage {
+        img {
+            width: 8rem;
+            height: auto;
+        }
+    }
+
+    .buttonDetail {
+        width: 3rem;
+        font-weight: 300;
+        font-size: 0.75rem;
+        margin-left: 1rem;
+        padding: 0.3rem;
+    }
+}
