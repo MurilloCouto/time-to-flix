@@ -6,7 +6,7 @@ import { MovieService } from "../api/MovieService";
 
 import styles from "./MovieDetail.module.scss";
 
-const baseImageUrl = "https://image.tmdb.org/t/p/w780";
+const baseImageUrl = "https://image.tmdb.org/t/p/original";
 const defaultImageUrl =
   "https://c4.wallpaperflare.com/wallpaper/644/305/118/pattern-black-gradient-texture-wallpaper-preview.jpg";
 

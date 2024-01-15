@@ -21,35 +21,18 @@ export interface Movie {
 export function Home({ searchValueProp }: { searchValueProp: string }) {
   const [movies, setMovies] = useState<Movie[]>([]);
 
-  async function getMovies() {
+  async function fetchMovies(searchString?: string) {
     const {
       data: { results },
-    } = await MovieService.getMovies();
+    } = searchString
+      ? await MovieService.searchMovies(searchString)
+      : await MovieService.getMovies();
 
     setMovies(results);
   }
 
-  async function searchMovie(movieString: string) {
-    const {
-      data: { results },
-    } = await MovieService.searchMovies(movieString);
-    setMovies(results);
-  }
-
   useEffect(() => {
-    if (movies.length === 0) {
-      getMovies();
-    }
-    getMovies();
-  }, []);
-
-  useEffect(() => {
-    if (searchValueProp) {
-      searchMovie(searchValueProp);
-    }
-    if (searchValueProp === "") {
-      getMovies();
-    }
+    fetchMovies(searchValueProp);
   }, [searchValueProp]);
 
   return (
