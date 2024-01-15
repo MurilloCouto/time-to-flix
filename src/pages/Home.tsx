@@ -12,10 +12,10 @@ export interface Movie {
   poster_path: string;
   backdrop_path: string;
   vote_average: number;
-  popularity: string;
   overview: string;
   original_language: string;
-  budget: string;
+  runtime: number;
+  release_date: string;
 }
 
 export function Home({ searchValueProp }: { searchValueProp: string }) {
@@ -36,12 +36,21 @@ export function Home({ searchValueProp }: { searchValueProp: string }) {
   }, [searchValueProp]);
 
   return (
-    <section className={styles.home}>
-      {movies.map((movie) => (
-        <div className={styles.cards} key={movie.id}>
-          <MovieCard movie={movie} />
+    <section>
+      {movies.length === 0 ? (
+        <p className={styles.notFoundFilm}>
+          Parece que não encontramos nenhum filme com esse nome em nosso banco
+          de dados.
+        </p>
+      ) : (
+        <div className={styles.home}>
+          {movies.map((movie) => (
+            <div className={styles.cards} key={movie.id}>
+              <MovieCard movie={movie} />
+            </div>
+          ))}
         </div>
-      ))}
+      )}
     </section>
   );
 }
