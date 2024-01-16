@@ -9,9 +9,16 @@ import { Footer } from "./components/Footer";
 export function App() {
   const [searchValue, setSearchValue] = useState("");
 
+  function handleGoHome() {
+    setSearchValue("");
+  }
+
   return (
     <div>
-      <Header onSubmit={(inputValue) => setSearchValue(inputValue)} />
+      <Header
+        onSubmit={(inputValue) => setSearchValue(inputValue)}
+        onGoHome={handleGoHome}
+      />
       <Routes>
         <Route path="/" element={<Home searchValueProp={searchValue} />} />
         <Route path="/movie/:id" element={<MovieDetail />} />

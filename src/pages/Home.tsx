@@ -24,9 +24,7 @@ export function Home({ searchValueProp }: { searchValueProp: string }) {
   async function fetchMovies(searchString?: string) {
     const {
       data: { results },
-    } = searchString
-      ? await MovieService.searchMovies(searchString)
-      : await MovieService.getMovies();
+    } = await MovieService.getMovies(searchString);
 
     setMovies(results);
   }

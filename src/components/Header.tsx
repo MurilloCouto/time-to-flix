@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
 import { FormEvent, useState } from "react";
 
+import { FaHouse } from "react-icons/fa6";
+
 import styles from "./Header.module.scss";
 
 interface HeaderProps {
   onSubmit: (searchValue: string) => void;
+  onGoHome: () => void;
 }
 
 export function Header(props: HeaderProps) {
@@ -16,6 +19,7 @@ export function Header(props: HeaderProps) {
     props.onSubmit(searchValue);
     setSearchValue("");
   }
+
   return (
     <div className={styles.header}>
       <button className={styles.buttonGoBack}>
@@ -24,6 +28,11 @@ export function Header(props: HeaderProps) {
             src="https://fontmeme.com/permalink/240112/f9a1a7db7ff88a2e6ec855c2b9c7f4de.png"
             alt="netflix-font"
           />
+        </Link>
+      </button>
+      <button className={styles.house} onClick={props.onGoHome}>
+        <Link to={`/`}>
+          <FaHouse size={35} />
         </Link>
       </button>
       <form onSubmit={handleSubmit}>
