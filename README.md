@@ -15,14 +15,6 @@
 ## Requirements
 
 - Node.js (v14.0.0 or higher)
-- NPM (v6.0.0 or higher)
-- Typescript (v5.2.2 or higher)
-- Vite (v5.0.8 or higher)
-- Axios (v1.6.5 or higher)
-- React (v18.2.0 or higher) 
-- React-dom (v18.2.0 or higher)
-- React-router-dom (v6.21.1 or higher)
-- Sass (v1.69.7 or higher)
   
 ## Languages ​​and Technologies
 
@@ -45,8 +37,8 @@
   
 ## Website link 
 
-- <a href="(https://time-to-flix.vercel.app/)" target="_blank">
+- https://time-to-flix.vercel.app/
 
 ## Author
 
-- [@MurilloCouto]<a href="(https://www.linkedin.com/in/murillo-alves-couto-1b072828a/)" target="_blank">
+- [@MurilloCouto](https://www.github.com/MurilloCouto)
