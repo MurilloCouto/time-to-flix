@@ -3,6 +3,13 @@
     grid-template-columns: repeat(5, 1fr);
 
     max-width: 120rem;
+    margin-bottom: 5rem;
+}
+
+.notFoundFilm {
+    text-align: center;
+    font-size: 2rem;
+    padding: 10.5rem 2rem;
 }
 
 .cards {
@@ -17,12 +24,11 @@
 @media screen and (max-width: 768px) {
     .home {
         grid-template-columns: repeat(2, 1fr);
-        padding: 0 1rem;
+        padding: 0;
     }
 
     .cards {
-        padding: 0;
-        text-align: left;
+        padding: 0; 
     }
 }
 

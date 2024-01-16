@@ -10,15 +10,13 @@ export function withBaseUrl(path: string) {
 }
 
 export class MovieService {
-    static getMovies () {
-        return axios(withBaseUrl("movie/popular"))
-    }
+    static getMovies(movie?: string) {
+    return movie
+      ? axios(withBaseUrl(`search/movie`) + `&query=${movie}`)
+      : axios(withBaseUrl('movie/popular'));
+  }
 
     static getMovieDetails (id: number) {
         return axios(withBaseUrl(`movie/${id}`))
-    }
-
-    static searchMovies (movie: string) {
-        return axios(withBaseUrl(`search/movie`) + `&query=${movie}`)
     }
 }

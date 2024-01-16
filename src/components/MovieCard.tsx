@@ -12,13 +12,19 @@ export function MovieCard({ movie }: { movie: Movie }) {
   const imageUrl = movie.poster_path
     ? baseImageUrl + movie.poster_path
     : defaultImageUrl;
+
+  const movieLength =
+    movie.title.length > 42
+      ? movie.title.substring(0, 40) + "..."
+      : movie.title;
+
   return (
     <div className={styles.movieCard}>
       <div className={styles.movieImage}>
         <img src={imageUrl} alt={movie.title} />
       </div>
       <div className={styles.movieTitle}>
-        <h5>{movie.title}</h5>
+        <h5>{movieLength}</h5>
         <Link to={`/movie/${movie.id}`} className={styles.buttonDetail}>
           Movie Details
         </Link>

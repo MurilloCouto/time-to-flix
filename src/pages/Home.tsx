@@ -12,53 +12,43 @@ export interface Movie {
   poster_path: string;
   backdrop_path: string;
   vote_average: number;
-  popularity: string;
   overview: string;
   original_language: string;
-  budget: string;
+  runtime: number;
+  release_date: string;
 }
 
 export function Home({ searchValueProp }: { searchValueProp: string }) {
   const [movies, setMovies] = useState<Movie[]>([]);
 
-  async function getMovies() {
+  async function fetchMovies(searchString?: string) {
     const {
       data: { results },
-    } = await MovieService.getMovies();
+    } = await MovieService.getMovies(searchString);
 
     setMovies(results);
   }
 
-  async function searchMovie(movieString: string) {
-    const {
-      data: { results },
-    } = await MovieService.searchMovies(movieString);
-    setMovies(results);
-  }
-
   useEffect(() => {
-    if (movies.length === 0) {
-      getMovies();
-    }
-    getMovies();
-  }, []);
-
-  useEffect(() => {
-    if (searchValueProp) {
-      searchMovie(searchValueProp);
-    }
-    if (searchValueProp === "") {
-      getMovies();
-    }
+    fetchMovies(searchValueProp);
   }, [searchValueProp]);
 
   return (
-    <section className={styles.home}>
-      {movies.map((movie) => (
-        <div className={styles.cards} key={movie.id}>
-          <MovieCard movie={movie} />
+    <section>
+      {movies.length === 0 ? (
+        <p className={styles.notFoundFilm}>
+          Parece que não encontramos nenhum filme com esse nome em nosso banco
+          de dados.
+        </p>
+      ) : (
+        <div className={styles.home}>
+          {movies.map((movie) => (
+            <div className={styles.cards} key={movie.id}>
+              <MovieCard movie={movie} />
+            </div>
+          ))}
         </div>
-      ))}
+      )}
     </section>
   );
 }
